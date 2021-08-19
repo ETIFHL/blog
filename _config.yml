@@ -103,7 +103,4 @@ theme: volantis
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: 'git'
-  repo: 'git@github.com:ETIFHL/etifhl.github.io.git'
-  branch: 'main'
-  token: $
+  type: ''
