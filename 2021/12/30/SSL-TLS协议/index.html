@@ -5,10 +5,6 @@
   <!-- SEO相关 -->
   
     
-      
-        <meta name="robots" content="index,follow">
-      
-    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -26,7 +22,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>ETIFHL&#39;s Blog</title>
+  <title>SSL/TLS协议 - ETIFHL&#39;s Blog</title>
+  
+    <meta name="keywords" content="SSL TLS HTTPS 技术 网络 协议">
   
 
   
@@ -106,7 +104,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <body>
     
 
-<header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -357,7 +355,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="l_cover">
   
     
-        <div id="full" class='cover-wrapper  dock' style="display: ;">
+        <div id="full" class='cover-wrapper post dock' style="display: none;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://uploadbeta.com/api/pictures/random/?key=BingEverydayWallpaperPicture"></div>
           
@@ -422,7 +420,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </div>
 </div>
 
-          <div id="scroll-down" style="display: ;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+          <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
         </div>
     
   
@@ -433,166 +431,232 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 
 <div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   
-  <section class="post-list">
-    
-      
-        
-        
-          
-        
-          
-        
-          
-        
-      
+
+
+  
+  <div class="article-meta" id="top">
     
     
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
     
-    <h2 class="article-title" >
-      <a href="/blog/2021/12/30/SSL-TLS%E5%8D%8F%E8%AE%AE/">
+      <h1 class="title">
         SSL/TLS协议
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        一、概述发现自己对SSL/TLS知其然不知其所以然，写个小文章自己也加深下印象。
-这玩意是啥Secure Socket Layer（安全套接字层），Transport Layer Security（传输层安全）。TLS可以理解为SSL的后续版本。TLS与SSL在传输层与应用层之间对网络连接进行加密。
-解决了啥问题1231. 窃听风险（eavesdropping）：第三方可以获知通信内容。2....
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
+      </h1>
+      <div class='new-meta-box'>
         
-        <time>2021-12-30</time>
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="">
+    <p>请设置文章作者</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2021年12月30日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="SSL/TLS协议" data-path="/blog/2021/12/30/SSL-TLS%E5%8D%8F%E8%AE%AE/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
         
       </div>
+    
+  </div>
+
+
+  
+  
+  <h2 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h2><p>发现自己对SSL/TLS知其然不知其所以然，写个小文章自己也加深下印象。</p>
+<h3 id="这玩意是啥"><a href="#这玩意是啥" class="headerlink" title="这玩意是啥"></a>这玩意是啥</h3><p>Secure Socket Layer（安全套接字层），Transport Layer Security（传输层安全）。TLS可以理解为SSL的后续版本。TLS与SSL在传输层与应用层之间对网络连接进行加密。</p>
+<h3 id="解决了啥问题"><a href="#解决了啥问题" class="headerlink" title="解决了啥问题"></a>解决了啥问题</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 窃听风险（eavesdropping）：第三方可以获知通信内容。</span><br><span class="line">2. 篡改风险（tampering）：第三方可以修改通信内容。</span><br><span class="line">3. 冒充风险（pretending）：第三方可以冒充他人身份参与通信。</span><br></pre></td></tr></table></figure>
+
+<h3 id="解决问题后会怎么样"><a href="#解决问题后会怎么样" class="headerlink" title="解决问题后会怎么样?"></a>解决问题后会怎么样?</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 窃听风险（eavesdropping）：第三方可以获知通信内容。</span><br><span class="line">2. 篡改风险（tampering）：第三方可以修改通信内容。</span><br><span class="line">3. 冒充风险（pretending）：第三方可以冒充他人身份参与通信。</span><br></pre></td></tr></table></figure>
+
+<h2 id="二、基本过程"><a href="#二、基本过程" class="headerlink" title="二、基本过程"></a>二、基本过程</h2><h3 id="他们是怎么做的？"><a href="#他们是怎么做的？" class="headerlink" title="他们是怎么做的？"></a>他们是怎么做的？</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">客户端先向服务器端索要公钥，然后用公钥加密信息，服务器收到密文后，用自己的私钥解密。</span><br></pre></td></tr></table></figure>
+
+<h3 id="公钥被人篡改了怎么办？"><a href="#公钥被人篡改了怎么办？" class="headerlink" title="公钥被人篡改了怎么办？"></a>公钥被人篡改了怎么办？</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">解决方法：将公钥放在数字证书中。只要证书是可信的，公钥就是可信的。</span><br></pre></td></tr></table></figure>
+
+<h3 id="公钥加密计算量太大，如何减少耗用的时间？"><a href="#公钥加密计算量太大，如何减少耗用的时间？" class="headerlink" title="公钥加密计算量太大，如何减少耗用的时间？"></a>公钥加密计算量太大，如何减少耗用的时间？</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">解决方法：每一次对话（session），客户端和服务器端都生成一个&quot;对话密钥&quot;（session key），用它来加密信息。由于&quot;对话密钥&quot;是对称加密，所以运算速度非常快，而服务器公钥只用于加密&quot;对话密钥&quot;本身，这样就减少了加密运算的消耗时间。</span><br></pre></td></tr></table></figure>
+
+<h3 id="所以，大致过程如下"><a href="#所以，大致过程如下" class="headerlink" title="所以，大致过程如下"></a>所以，大致过程如下</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 客户端向服务器端索要并验证公钥。</span><br><span class="line">2. 双方协商生成&quot;对话密钥&quot;。(1,2 步为握手阶段)</span><br><span class="line">3. 双方采用&quot;对话密钥&quot;进行加密通信。</span><br></pre></td></tr></table></figure>
+
+<h2 id="三、详细过程"><a href="#三、详细过程" class="headerlink" title="三、详细过程"></a>三、详细过程</h2><p>艹，阮一峰老师写的太好了，自己拿 let’s encrypt 做做试验。或者自己签发一下证书试试看！详细看引用参考！</p>
+<h2 id="四、TLS1-3，Less-is-more"><a href="#四、TLS1-3，Less-is-more" class="headerlink" title="四、TLS1.3，Less is more"></a>四、TLS1.3，Less is more</h2><p>还在学！强制使用了DH算法来减少一次RTT！</p>
+<hr>
+<h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><p>概述</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2014/02/ssl_tls.html">SSL/TLS协议运行机制的概述</a></p>
+</blockquote>
+<p>更详细的图解，多了一个 session 恢复的解释。</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2014/09/illustration-ssl.html">图解SSL/TLS协议</a></p>
+</blockquote>
+
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/blog/2021/12/30/SSL-TLS%E5%8D%8F%E8%AE%AE/'>
-            阅读全文
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=https://etifhl.github.io/2021/12/30/SSL-TLS%E5%8D%8F%E8%AE%AE/>https://etifhl.github.io/2021/12/30/SSL-TLS%E5%8D%8F%E8%AE%AE/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-12-30T15:26:42+00:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2021年12月30日</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
+          
   
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/blog/2021/12/30/hello-world/">
-        Hello World
-      </a>
-    </h2>
-  
-  <div class='md'>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/SSL-TLS-HTTPS-%E6%8A%80%E6%9C%AF-%E7%BD%91%E7%BB%9C-%E5%8D%8F%E8%AE%AE/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>SSL TLS HTTPS 技术 网络 协议</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
       
-        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Qu...
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://etifhl.github.io/2021/12/30/SSL-TLS%E5%8D%8F%E8%AE%AE/&title=SSL/TLS协议 - ETIFHL's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://etifhl.github.io/2021/12/30/SSL-TLS%E5%8D%8F%E8%AE%AE/&title=SSL/TLS协议 - ETIFHL's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://etifhl.github.io/2021/12/30/SSL-TLS%E5%8D%8F%E8%AE%AE/&title=SSL/TLS协议 - ETIFHL's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+    
       
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-12-30</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/blog/2021/12/30/hello-world/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
 </div>
 
-          </div>
+
+
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/blog/2021/08/06/git-subtree/">
-        git-subtree
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        这玩意是啥让项目里的一个目录可以放一个子项目，变动能直接提交到子项目，子项目的变动也能在项目内更新回来。
-解决了啥问题
-功能模块化后，可以在一个项目内修改，不用来回切换。
-公共代码的快速迭代。（？）
-
-跟 submodule 有啥区别本项目内可以直接提交，更稳定的模块用submodule吧。
-
-怎么玩指令123456git subtree add   --prefix=&lt;prefix&...
-      
-    
+    </div>
   </div>
+
+
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-08-06</time>
-        
-      </div>
+  
+
+  
+    <div class="prev-next">
       
-        <div>
-          <a class='readmore' href='/blog/2021/08/06/git-subtree/'>
-            阅读全文
-          </a>
-        </div>
+      
+        <a class='next' href='/blog/2021/12/30/hello-world/'>
+          <p class='title'>Hello World<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any ...</p>
+        </a>
       
     </div>
   
+</article>
 
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
 </div>
 
-          </div>
-        
-      
-    
-  </section>
-  
-    
-  
+  </article>
+
+
+
+
 
 
 </div>
@@ -602,120 +666,22 @@ Qu...
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/blog/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">ETIFHL's Blog</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/blog/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:me@xxx.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/volantis-x/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/blog/"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
 
-  
 
-  
-    
-    
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
   <header>
     
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <a href="/blog/tags/SSL-TLS-HTTPS-%E6%8A%80%E6%9C%AF-%E7%BD%91%E7%BB%9C-%E5%8D%8F%E8%AE%AE/" style="font-size: 14px; color: #999">SSL TLS HTTPS 技术 网络 协议</a> <a href="/blog/tags/git-%E6%8A%80%E6%9C%AF-%E8%AE%B0%E5%BD%95-%E5%AD%A6%E4%B9%A0/" style="font-size: 14px; color: #999">git 技术 记录 学习</a>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%A6%82%E8%BF%B0"><span class="toc-text">一、概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%99%E7%8E%A9%E6%84%8F%E6%98%AF%E5%95%A5"><span class="toc-text">这玩意是啥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E4%BA%86%E5%95%A5%E9%97%AE%E9%A2%98"><span class="toc-text">解决了啥问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98%E5%90%8E%E4%BC%9A%E6%80%8E%E4%B9%88%E6%A0%B7"><span class="toc-text">解决问题后会怎么样?</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%9F%BA%E6%9C%AC%E8%BF%87%E7%A8%8B"><span class="toc-text">二、基本过程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%96%E4%BB%AC%E6%98%AF%E6%80%8E%E4%B9%88%E5%81%9A%E7%9A%84%EF%BC%9F"><span class="toc-text">他们是怎么做的？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AC%E9%92%A5%E8%A2%AB%E4%BA%BA%E7%AF%A1%E6%94%B9%E4%BA%86%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F"><span class="toc-text">公钥被人篡改了怎么办？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AC%E9%92%A5%E5%8A%A0%E5%AF%86%E8%AE%A1%E7%AE%97%E9%87%8F%E5%A4%AA%E5%A4%A7%EF%BC%8C%E5%A6%82%E4%BD%95%E5%87%8F%E5%B0%91%E8%80%97%E7%94%A8%E7%9A%84%E6%97%B6%E9%97%B4%EF%BC%9F"><span class="toc-text">公钥加密计算量太大，如何减少耗用的时间？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%80%E4%BB%A5%EF%BC%8C%E5%A4%A7%E8%87%B4%E8%BF%87%E7%A8%8B%E5%A6%82%E4%B8%8B"><span class="toc-text">所以，大致过程如下</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E8%AF%A6%E7%BB%86%E8%BF%87%E7%A8%8B"><span class="toc-text">三、详细过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81TLS1-3%EF%BC%8CLess-is-more"><span class="toc-text">四、TLS1.3，Less is more</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%AB%A0"><span class="toc-text">参考文章</span></a></li></ol></li></ol>
     </div>
   </section>
 
-
-  
-
-  
-    
-    
-
-<section class="widget qrcode shadow desktop mobile">
-  
-
-  <div class='content article-entry'>
-    
-      <img src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png'
-      
-        height='64px'
-      />
-    
-      <img src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png'
-      
-        height='64px'
-      />
-    
-  </div>
-</section>
 
   
 
@@ -730,21 +696,21 @@ Qu...
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="SSL/TLS协议";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   // header 这里无论是否开启pjax都需要
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.remove("show");
+  l_header.classList.add("show");
   
   
     // cover
     var cover_wrapper=document.querySelector('.cover-wrapper');
     
-    cover_wrapper.id="full";
-    cover_wrapper.style.display="";
+    cover_wrapper.id="none";
+    cover_wrapper.style.display="none";
     
   
 </script>
